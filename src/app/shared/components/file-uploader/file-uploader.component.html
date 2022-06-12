@@ -1,0 +1,8 @@
+<div class="upload_image" *ngIf="baseUrl&&fileUrl">
+    <img [src]="imageUrl()">
+</div>
+
+<input type="file" #file placeholder="Choose file" (change)="uploadFile(file.files)" style="display:none;" accept="image/*">
+<button class="btn defult_small_btn" mat-raised-button (click)="file.click()">
+    {{text|translate}}<span *ngIf="progress > 0">{{progress}}%</span>
+</button>

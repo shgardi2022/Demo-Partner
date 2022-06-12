@@ -1,0 +1,55 @@
+<!-- 
+
+
+<form [formGroup]="closingForm" autocomplete="off" novalidate fxLayout="column wrap" fxLayoutAlign="center center"
+    fxLayoutGap="10px">
+    <div mat-dialog-content>
+        <input type="hidden" formControlName="id" />
+        <div class="row">
+            <div class="col-6">
+                <mat-form-field>
+                    <input matInput type="text" placeholder="Name En" formControlName="nameEn" id="nameEn" />
+
+                    <mat-error id="nameEn_required_error" *ngIf="hasError('nameEn', 'required')">
+                        name En is required
+                    </mat-error>
+                    <mat-error id="nameEn_min_error" *ngIf="hasError('nameEn', 'minlength')">
+                        name En must be greater than 4 characters
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-6">
+                <mat-form-field>
+                    <input matInput type="text" placeholder="Name Ar" formControlName="nameAr" id="nameAr" />
+
+                    <mat-error id="nameAr_required_error" *ngIf="hasError('nameAr', 'required')">
+                        name Ar is required
+                    </mat-error>
+                    <mat-error id="nameAr_min_error" *ngIf="hasError('nameAr', 'minlength')">
+                        name Ar must be greater than 4 characters
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="row">
+                <div class="col-6" style="margin-top: 26px;">
+                    <mat-checkbox matInput placeholder="isActive" formControlName="isActive" id="check_active isActive">
+                        Is Active
+                    </mat-checkbox>
+                </div>
+
+                <file-uploader formControlName="imageEn" text="UPLOAD_ARABIC_IMAGE"></file-uploader>
+
+             
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 text-right">
+            <div class="map-buttons">
+                <button id="btn_save" class="btn btn-primary" (click)="save()">Save</button>
+              
+            </div>
+        </div>
+    </div>
+</form> -->

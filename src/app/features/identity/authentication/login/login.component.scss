@@ -1,0 +1,21 @@
+// $direction:ltr;
+// $floatRight:right;
+// $floatLeft:left;
+
+// @if $direction==rtl{
+// $floatRight: right;
+// $floatLeft:left;
+
+// }
+// @else {
+//   $floatRight:left;
+//   $floatLeft:right;
+// }
+// button
+// {
+//   $floatRight:left;
+// }
+// button
+// {
+//   $floatLeft:right;
+// }

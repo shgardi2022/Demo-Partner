@@ -1,0 +1,65 @@
+<!-- for login page only  -->
+<div class="change_lang_login" *ngIf="router.url.indexOf('login') > -1">
+    <button class="arabic" *ngIf="currentSystemLanguage=='en-US'" mat-button (click)="changeLanguage('ar-SA')">
+        {{'ARABIC'|translate}}
+    </button>
+    <button class="english" *ngIf="currentSystemLanguage=='ar-SA'" mat-button (click)="changeLanguage('en-US')">
+        {{'ENGLISH'|translate}}
+    </button>
+</div>
+
+<!-- for other pages  -->
+<div class="change_lang_body" *ngIf="router.url.indexOf('login') === -1">
+    <button class="arabic" *ngIf="currentSystemLanguage=='en-US'" mat-button (click)="changeLanguage('ar-SA')">
+        {{'ARABIC'|translate}}
+        <i class="ri-global-line"></i>
+    </button>
+    <button class="english" *ngIf="currentSystemLanguage=='ar-SA'" mat-button (click)="changeLanguage('en-US')">
+        <i class="ri-global-line"></i>
+        {{'ENGLISH'|translate}}
+    </button>
+</div>
+
+<div class="bg_loader" id="loader">
+    <div class="box loader-1">
+        <div class="loader">
+            <div class="loader-ball-1"></div>
+            <div class="loader-ball-2"></div>
+        </div>
+        <p>Loading</p>
+    </div>
+</div>
+
+<app-menu *ngIf="isLoggedIn()"></app-menu>
+
+<router-outlet *ngIf="!isLoggedIn()"></router-outlet>
+
+<section class="content-section" *ngIf="isLoggedIn()">
+    <div class="content">
+        <router-outlet></router-outlet>
+    </div>
+</section>
+
+<div class="error_toaster">
+    <img src="./assets/image/close-circle-fill.svg">
+    <h5 id="errorMsg"></h5>
+    <button mat-icon-button class="btn_icon" (click)="close()">
+        <i class="ri-close-circle-line"></i>
+    </button>
+</div>
+
+<div class="warning_toaster">
+    <img src="./assets/image/error-warning-fill.svg">
+    <h5 id="warningMsg"></h5>
+    <button mat-icon-button class="btn_icon" (click)="close()">
+        <i class="ri-close-circle-line"></i>
+    </button>
+</div>
+
+<div class="success_toaster">
+    <img src="./assets/image/checkbox-circle-fill.svg">
+    <h5 id="successMsg"></h5>
+    <button mat-icon-button class="btn_icon" (click)="close()">
+        <i class="ri-close-circle-line"></i>
+    </button>
+</div>

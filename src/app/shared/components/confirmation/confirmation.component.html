@@ -1,0 +1,22 @@
+<div class="deletePopup">
+    <div class="row">
+        <div class="col-md-12">
+            <i class="ri-close-line" (click)="close(false)"></i>
+        </div>
+    </div>
+
+    <div class="imageDelete">
+        <img src="assets/image/delete.png">
+    </div>
+
+    <div class="confirmMessage">
+        <h5>{{confirmationConfig.message}}</h5>
+    </div>
+
+    <div class="col-md-12 text-right">
+        <div class="map-button">
+            <button class="btn primary_medium_btn" (click)="close(true)">{{confirmationConfig.trueText}}</button>
+            <button class="btn defult_medium_btn" (click)="close(false)">{{confirmationConfig.falseText}}</button>
+        </div>
+    </div>
+</div>

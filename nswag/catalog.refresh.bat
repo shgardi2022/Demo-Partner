@@ -1,0 +1,1 @@
+"..\node_modules\.bin\nswag" run  catalog.service.config.nswag

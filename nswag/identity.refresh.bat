@@ -1,0 +1,1 @@
+"..\node_modules\.bin\nswag" run identity.service.config.nswag

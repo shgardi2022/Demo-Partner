@@ -1,0 +1,85 @@
+<div class="sidebar" [ngClass]="toggleSidebar ? 'close' : ''" #sidebar [ngClass]="sidebar.matches(':hover') ? '': 'close'" (mouseover)="''" (mouseleave)="''">
+    <ul class="nav-links">
+        <li>
+            <a [routerLink]="['/']">
+                <i class="ri-home-5-line"></i>
+                <span class="link_name">{{'HOME'|translate}}</span>
+            </a>
+        </li>
+
+        <li [ngClass]="toggleMenuItem ? '' : 'showMenu'" (click)="showMenuItem()">
+            <div class="iocn-link">
+                <a>
+                    <i class="ri-user-6-line"></i>
+                    <span class="link_name">{{'SHGARDI_PARTNER'|translate}}</span>
+                    <i class="ri-arrow-down-s-line arrow"></i>
+                </a>
+            </div>
+            <!-- <ul class="sub-menu" (click)="showMenuItem()">
+                <li *ngFor="let page of menuItems" (click)="showSidebar()" routerLinkActive="active">
+                    <a [routerLink]="[page.page]">{{page.title}}</a>
+                </li>
+            </ul> -->
+        </li>
+    </ul>
+</div>
+
+<section class="top_nav">
+    <div class="nav-content">
+        <button class="show_sidebar" mat-icon-button (click)="showSidebar()">
+            <i class="ri-menu-3-line"></i>
+        </button>
+
+        <div class="dashboard-details">
+            <div class="dashboard-content">
+                <img src="../assets/image/logo.png" alt="logo">
+            </div>
+            <div class="dashboard_name">
+                {{'SHGARDI_PARTNER'|translate}}
+            </div>
+        </div>
+
+        <div class="user_profile">
+            <button mat-button [matMenuTriggerFor]="beforeMenuProfile">
+                <div class="profile-details">
+                    <i class="ri-arrow-down-s-line"></i>
+                    <span class="admin_name">{{userName}}</span>
+                    <!-- <img [src]="userProfileImageUrl" alt="profileImg"> -->
+                    <img src="../assets/image/avatar-person.svg" alt="profileImg">
+                </div>
+            </button>
+
+            <mat-menu #beforeMenuProfile="matMenu" xPosition="before">
+                <!-- <a class="change_pass" href="#" mat-menu-item>
+                    <i class="ri-lock-line"></i>
+                    <span>{{'CHANGE_PASSWORD'|translate}}</span>
+                </a> -->
+                <a class="log_out" *ngIf="isLoggedIn()" (click)="logout()" mat-menu-item>
+                    <i class="ri-logout-circle-r-line"></i>
+                    <span>{{'LOGOUT'|translate}}</span>
+                </a>
+            </mat-menu>
+        </div>
+
+        <div class="notification">
+            <button mat-icon-button [matMenuTriggerFor]="beforeMenuNotification">
+                <i class="ri-notification-line"></i>
+            </button>
+
+            <mat-menu #beforeMenuNotification="matMenu" xPosition="before">
+                <a href="#" mat-menu-item>
+                    <i class="ri-alert-line notification_icon"></i>
+                    <span>{{'NOTIFICATION 1'|translate}}</span>
+                </a>
+                <a href="#" mat-menu-item>
+                    <i class="ri-alert-line notification_icon"></i>
+                    <span>{{'NOTIFICATION 2'|translate}}</span>
+                </a>
+                <a href="#" mat-menu-item>
+                    <i class="ri-alert-line notification_icon"></i>
+                    <span>{{'NOTIFICATION 3'|translate}}</span>
+                </a>
+            </mat-menu>
+        </div>
+    </div>
+</section>
